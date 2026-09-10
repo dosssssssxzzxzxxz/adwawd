@@ -1,0 +1,34 @@
+[
+  {
+    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "type": "asi",
+    "name": "Example Cheat v1.0",
+    "severity": "HIGH",
+    "action": "BAN",
+    "detection_reason": "Known malicious ASI cheat module"
+  },
+  {
+    "hash": "5d41402abc4b2a76b9719d911017c592aff5a53f3a8e7e7e3e3e3e3e3e3e3e3e",
+    "type": "lua",
+    "name": "Aimbot Script v2.1",
+    "severity": "CRITICAL",
+    "action": "BAN",
+    "detection_reason": "Automated targeting script detected"
+  },
+  {
+    "hash": "6512bd43d9caa6e02c990b0a82652dca12674cc05d5297f427b025106fbf90f1",
+    "type": "cs",
+    "name": "Speed Hack CLEO v1.5",
+    "severity": "HIGH",
+    "action": "BAN",
+    "detection_reason": "CLEO speedhack implementation"
+  },
+  {
+    "hash": "c4ca4238a0b923820dcc509a6f75849b81a8fa37bcf1d5f8e3e3e3e3e3e3e3e3",
+    "type": "dll",
+    "name": "Memory Injector Stub",
+    "severity": "CRITICAL",
+    "action": "BAN",
+    "detection_reason": "Generic memory injection tool"
+  }
+]
