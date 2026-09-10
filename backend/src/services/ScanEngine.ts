@@ -1,6 +1,13 @@
 export class ScanEngine {
   async analyzeScanData(helperData: any) {
-    const results = {
+    const results: {
+      overallResult: string;
+      detections: any[];
+      suspiciousModules: any[];
+      hiddenFiles: any[];
+      cosmeticMods: any[];
+      timestamp: Date;
+    } = {
       overallResult: 'CLEAN',
       detections: [],
       suspiciousModules: [],
@@ -9,22 +16,17 @@ export class ScanEngine {
       timestamp: new Date(),
     };
 
-    // Filter out cosmetic modifications
     const cosmeticExtensions = ['.txd', '.dff', '.col', '.ide', '.timecyc', '.gxt'];
 
-    if (helperData) {
-      // Analyze file collections
-      if (helperData.files) {
-        for (const file of helperData.files) {
-          const ext = this.getExtension(file.name);
-          
-          if (cosmeticExtensions.includes(ext)) {
-            results.cosmeticMods.push({
-              name: file.name,
-              type: ext,
-              ignored: true,
-            });
-          }
+    if (helperData && helperData.files) {
+      for (const file of helperData.files) {
+        const ext = this.getExtension(file.name);
+        if (cosmeticExtensions.includes(ext)) {
+          results.cosmeticMods.push({
+            name: file.name,
+            type: ext,
+            ignored: true,
+          });
         }
       }
     }
